@@ -47,7 +47,7 @@ class UE:
         url = 'https://zejlgz.com/api/login/tg'
         tokens = []
         for query in queries:
-            data = json.dumps({'init_data':query,'referrer':'gl5mq7'})
+            data = json.dumps({'init_data':query,'referrer':'yqw2x9'})
             headers = {
                 **self.headers,
                 'Content-Length': str(len(data))
