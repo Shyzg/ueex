@@ -48,7 +48,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     generate_token = await response.json()
                     token = generate_token['data']['token']['token']
@@ -77,7 +77,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     return await response.json()
         except ClientResponseError as e:
@@ -97,7 +97,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     scene_info = await response.json()
                     if scene_info['code'] == 0 or scene_info['data'] is not None:
@@ -120,7 +120,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     reward_egg_scene = await response.json()
                     if reward_egg_scene['code'] == 0 or reward_egg_scene['data'] is not None:
@@ -143,7 +143,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     list_invite = await response.json()
                     for list in list_invite['data']:
@@ -164,7 +164,7 @@ class UE:
         }
         try:
             async with ClientSession(timeout=ClientTimeout(total=20)) as session:
-                async with session.post(url=url, headers=headers, data=data) as response:
+                async with session.post(url=url, headers=headers, data=data, ssl=False) as response:
                     response.raise_for_status()
                     reward_invite = await response.json()
                     if 'data' in reward_invite:
