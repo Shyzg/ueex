@@ -208,6 +208,8 @@ class UE:
 
 if __name__ == '__main__':
     try:
+        if hasattr(asyncio, 'WindowsSelectorEventLoopPolicy'):
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         init(autoreset=True)
         ue = UE()
         asyncio.run(ue.main())
