@@ -1,12 +1,12 @@
-from colorama import *
-from datetime import datetime, timedelta
-from fake_useragent import FakeUserAgent
-from faker import Faker
 from aiohttp import (
     ClientResponseError,
     ClientSession,
     ClientTimeout
 )
+from colorama import *
+from datetime import datetime, timedelta
+from fake_useragent import FakeUserAgent
+from faker import Faker
 import asyncio, json, os, sys
 
 class UE:
@@ -40,7 +40,7 @@ class UE:
 
     async def generate_token(self, query: str):
         url = 'https://zejlgz.com/api/login/tg'
-        data = json.dumps({'init_data':query,'referrer':'yqw2x9'})
+        data = json.dumps({'init_data':query,'referrer':'gl5mq7'})
         headers = {
             **self.headers,
             'Content-Length': str(len(data)),
@@ -210,6 +210,7 @@ if __name__ == '__main__':
     try:
         if hasattr(asyncio, 'WindowsSelectorEventLoopPolicy'):
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
         init(autoreset=True)
         ue = UE()
         asyncio.run(ue.main())
